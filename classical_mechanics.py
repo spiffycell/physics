@@ -30,6 +30,7 @@ class LawOfMotion(BaseModel):
         arbitrary_types_allowed = True
 
     def apply(self, state: State):
+        """ Apply the law of motion."""
         raise NotImplementedError("Subclasses must implement the apply method.")
 
 class System(BaseModel):
