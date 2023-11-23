@@ -47,6 +47,9 @@ class System(BaseModel):
     Knowing just how imperfect your knowledge is helps you determine HOW FAR 
     into the future or HOW far into the past you can predict or retrodict
 
+    If you say, "I want to know X days into the future"
+    - you then know how precisely you need to calculate the initial conditions
+
     @desc   System object.
     @param  BaseModel from pydantic
     @see
