@@ -2,7 +2,8 @@
 Three sided coin system.
 Here we introduce allowable and nonallowable laws.
 """
-from classical_mechanics import System, State, LawsOfMotion
+from classical_mechanics import System, State
+from laws import LawOfStasis, LawOfFlip
 
 class ThreeSidedCoin(System):
     """ Object for ThreeSidedCoin."""
@@ -10,7 +11,11 @@ class ThreeSidedCoin(System):
         """ Initialize Three-Sided Coin System."""
         super().__init__(
             system_name = "Three-Sided Coin",
-            state_space = [State(state_name='Heads'), State(state_name="Tails")],
+            state_space = [
+                State(state_name='Heads'), \
+                State(state_name="Tails"), \
+                State(state_name="Edge")
+            ],
             initial_condition = State(state_name='Heads'),
             current_state = State(state_name='Heads'),
             prior_state = State(state_name='Heads'),
