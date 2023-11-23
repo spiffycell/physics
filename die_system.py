@@ -1,3 +1,4 @@
+""" Die System."""
 from classical_mechanics import State, System
 from laws import LawOfStasis, LawOfCycle, LawOfConservedQuantity, LawOfRoll
 

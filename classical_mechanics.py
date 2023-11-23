@@ -58,6 +58,7 @@ class System(BaseModel):
     @see
     """
     system_name: str
+    system_space: list
     state_space: List[State]
     initial_condition: State
     current_state: State
