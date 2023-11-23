@@ -1,4 +1,6 @@
 """ Enumeration of Laws which some systems are subject to."""
+from classical_mechanics import LawOfMotion
+
 class LawOfStasis(LawOfMotion):
     """
     Law of Motion: Over time, the State stays the same.
