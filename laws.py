@@ -43,6 +43,7 @@ class LawOfConservedQuantity(LawOfMotion):
     @param current_state        the current state or configuration of the given system      
     @param conserved_quantity   the conserved quantity of the system. size of an iterative cycle, zero-indexed. 
     @param position             the current_state position relative to the conserved_quantity 
+    @return State               the state that is transitioned to as a result of applying the law
     @see
     """
     def apply(self, state_space: list, current_state: State, conserved_quantity: int, position: int) -> State:
