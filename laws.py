@@ -136,6 +136,12 @@ class LawOfPattern(LawOfMotion):
         - if multiple states can run from the same state, then predictability 
             becomes impossible
 
+    Reversible systems imply the conservation of information
+    - modular systems do not necessarily conserve information
+
+    Predictable systems are reversible. Reversible systems are predictable.
+    - Unpredictable systems are irreversible, and vice versa.
+
     @param  state_space The set of all possible states for a given system
     @return new_state   The new state or configuration of the system after the law is applied
     @see
