@@ -1,25 +1,5 @@
 from classical_mechanics import System, State, LawOfMotion
-
-class LawOfStasis(LawOfMotion):
-    """
-    Law of Motion: Over time, the State stays the same.
-
-    example: sigma(t+1) = sigma(t)
-    """
-    def apply(self, current_state: State) -> State:
-        if current_state is current_state:
-            return current_state
-
-class LawOfFlip(LawOfMotion):
-    """
-    Law of Motion: Over time, the State transitions for state set of size two.
-
-    example: sigma(t+1) = -(sigma(t)) 
-    """
-    def apply(self, state_space: list, current_state: State) -> State:
-        if state_space[0] is current_state:
-            return state_space[1]
-        return state_space[0]
+from laws import LawOfStasis, LawOfFlip
 
 class CoinSystem(System):
     """ Coin System Object."""
