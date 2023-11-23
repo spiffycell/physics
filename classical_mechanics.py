@@ -12,6 +12,9 @@ from typing import List
 # classes
 class State(BaseModel):
     """ 
+    If all States in a System have one State incoming and one State outgoing,
+    then the System is both deterministic and reversible
+
     @desc   State object.
     @param  BaseModel from pydantic
     @see
