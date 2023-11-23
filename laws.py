@@ -149,11 +149,3 @@ class LawOfPattern(LawOfMotion):
                 current_state = new_state
                 return current_state 
 
-
-
-
-
-
-
-
-
