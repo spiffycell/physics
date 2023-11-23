@@ -123,7 +123,7 @@ class LawOfSkipForward(LawOfMotion):
 class LawOfPattern(LawOfMotion):
     """
     Law of Motion: Over time, the State transitions according to a pattern.
-    For this to happen, information needs to be stored and retrieved about the system's prior
+    For this to happen, the system needs to store information about its prior
     state(s) in order to determine what the next state will be
 
     Example: (2, 2, 3, 4)
