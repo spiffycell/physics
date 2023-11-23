@@ -28,15 +28,19 @@ class LawOfConservedQuantity(LawOfMotion):
     Systems subject to this law can be said to have a Conserved Quantity
     In this example, if i set the current_state and give it a conserved quantity of 0, it will transition into itself
     if i set to a conserved quantity of 1, it will transition to one other state, then back to itself.
-
-    I'm able to map the general system of conserved quantities and their dynamics, but need to find a generalized way to
-    map specific states to specific conserved quantity types
     """
-    def apply(self, state_set: list, current_state: State, conserved_quantity: int) -> State:
+    def apply(self, state_set: list, current_state: State, conserved_quantity: int, position: int) -> State:
         for index in range(0, len(state_set)):
+            # find where in the array the current state is
             if state_set[index] == current_state:
-                new_state = state_set[(index + 1) % (conserved_quantity + 1)]
-                return new_state
+                # if the position of the state isn't at the end of the cycle 
+                if position < conserved_quantity:
+                    # keep moving forward in the cycle
+                    return state_set[index + 1]
+                # else, if it's at the end of the cycle
+                elif position == conserved_quantity:
+                    # circle back to the beginning of the cycle
+                    return state_set[index - conserved_quantity]
 
 class LawOfRoll(LawOfMotion):
     """
