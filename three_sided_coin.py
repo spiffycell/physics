@@ -1,12 +1,15 @@
-from classical_mechanics import System, State
-from laws import LawOfStasis, LawOfFlip
+"""
+Three sided coin system.
+Here we introduce allowable and nonallowable laws.
+"""
+from classical_mechanics import System, State, LawsOfMotion
 
-class CoinSystem(System):
-    """ Coin System Object."""
+class ThreeSidedCoin(System):
+    """ Object for ThreeSidedCoin."""
     def __init__(self):
-        """ Initialize the Coin System."""
+        """ Initialize Three-Sided Coin System."""
         super().__init__(
-            system_name = "Coin System",
+            system_name = "Three-Sided Coin",
             state_space = [State(state_name='Heads'), State(state_name="Tails")],
             initial_condition = State(state_name='Heads'),
             current_state = State(state_name='Heads'),

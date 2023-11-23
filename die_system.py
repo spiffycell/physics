@@ -4,6 +4,7 @@ from laws import LawOfStasis, LawOfCycle, LawOfConservedQuantity, LawOfRoll
 class DieSystem(System):
     """ Die System Object."""
     def __init__(self):
+        """ Initialize the Die System."""
         super().__init__(
             system_name = "Die System",
             state_space = [State(state_name='One'), State(state_name='Two'), State(state_name='Three'), \
