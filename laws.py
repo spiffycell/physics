@@ -94,6 +94,11 @@ class LawOfRoll(LawOfMotion):
     Law of Motion: Over time, the State transitions from one to one of six states \
             (including the current state).
 
+    Probabilistic behavior is not characteristic of classical mechanics
+    - but is characteristic of quantum mechanics (interestingly enough, quantum systems are both non-deterministic and reversible
+
+    Probability is non-deterministic, and classical mechanics are entirely deterministic
+
     @param  state_space The set of all possible states for a given system
     @return new_state   The new state or configuration of the system after the law is applied
     @see
