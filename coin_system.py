@@ -1,4 +1,4 @@
-from classical_mechanics import System, State, LawOfMotion
+from classical_mechanics import System, State
 from laws import LawOfStasis, LawOfFlip
 
 class CoinSystem(System):
