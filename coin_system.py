@@ -7,6 +7,7 @@ class CoinSystem(System):
         """ Initialize the Coin System."""
         super().__init__(
             system_name = "Coin System",
+            system_space = [],
             state_space = [State(state_name='Heads'), State(state_name="Tails")],
             initial_condition = State(state_name='Heads'),
             current_state = State(state_name='Heads'),

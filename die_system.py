@@ -8,6 +8,7 @@ class DieSystem(System):
         """ Initialize the Die System."""
         super().__init__(
             system_name = "Die System",
+            system_space = [],
             state_space = [State(state_name='One'), State(state_name='Two'), State(state_name='Three'), \
                     State(state_name='Four'), State(state_name='Five'), State(state_name='Six')],
             initial_condition = State(state_name='One'),

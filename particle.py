@@ -8,6 +8,7 @@ class Particle(System):
         """ Initialize the Die System."""
         super().__init__(
             system_name = "Particle",
+            system_space = [],
             state_space = [],
             initial_condition = State(state_name="Config1"),
             current_state = State(state_name="Config2"),
