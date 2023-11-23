@@ -39,6 +39,14 @@ class LawOfMotion(BaseModel):
 
 class System(BaseModel):
     """ 
+    To predict the future in a classical system, we need to know two things:
+    - what are its initial conditions (with perfect knowledge)?
+        - minor deviations in reality from our calculations could blow up in our face
+    - what are its laws of motion?
+
+    Knowing just how imperfect your knowledge is helps you determine HOW FAR 
+    into the future or HOW far into the past you can predict or retrodict
+
     @desc   System object.
     @param  BaseModel from pydantic
     @see
