@@ -40,7 +40,7 @@ class System(BaseModel):
     @see
     """
     system_name: str
-    state_set: List[State]
+    state_space: List[State]
     initial_condition: State
     current_state: State
     laws_of_motion: List[LawOfMotion]
