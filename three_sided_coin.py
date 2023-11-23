@@ -14,7 +14,7 @@ class ThreeSidedCoin(System):
             state_space = [
                 State(state_name='Heads'), \
                 State(state_name="Tails"), \
-                State(state_name="Edge")
+                State(state_name="Edges")
             ],
             initial_condition = State(state_name='Heads'),
             current_state = State(state_name='Heads'),

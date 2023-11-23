@@ -128,6 +128,14 @@ class LawOfPattern(LawOfMotion):
 
     Example: (2, 2, 3, 4)
 
+    Predictability and Retrodictability
+    - fully modular systems are retrodictable and predictable
+    - semi-modular systems are predictable, but not retrodictable
+        - if multiple states can run into the same state, then retrodictability
+            becomes impossible
+        - if multiple states can run from the same state, then predictability 
+            becomes impossible
+
     @param  state_space The set of all possible states for a given system
     @return new_state   The new state or configuration of the system after the law is applied
     @see
