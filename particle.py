@@ -9,7 +9,8 @@ class Particle(System):
         super().__init__(
             system_name = "Particle",
             system_space = [],
-            state_space = [],
+            state_space = [State(state_name="Config1"), \
+                    State(state_name="Config2"), State(state_name="Config3")],
             initial_condition = State(state_name="Config1"),
             current_state = State(state_name="Config2"),
             prior_state = State(state_name="Config3"),
