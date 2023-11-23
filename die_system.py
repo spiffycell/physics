@@ -10,7 +10,9 @@ class DieSystem(System):
                     State(state_name='Four'), State(state_name='Five'), State(state_name='Six')],
             initial_condition = State(state_name='One'),
             current_state = State(state_name='One'),
+            prior_state = State(state_name='One'),
             laws_of_motion = [LawOfStasis(), LawOfCycle(), LawOfConservedQuantity(), LawOfRoll()]
         )
         self.initial_condition = random.choice(self.state_space)
         self.current_state = self.initial_condition
+        self.prior_state = None

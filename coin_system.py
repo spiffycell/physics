@@ -9,8 +9,10 @@ class CoinSystem(System):
             state_space = [State(state_name='Heads'), State(state_name="Tails")],
             initial_condition = State(state_name='Heads'),
             current_state = State(state_name='Heads'),
+            prior_state = State(state_name='Heads'),
             laws_of_motion = [LawOfStasis(), LawOfFlip()]
         )
 
         self.initial_condition = random.choice(self.state_space)
         self.current_state = self.initial_condition
+        self.prior_state = None

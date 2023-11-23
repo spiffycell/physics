@@ -110,3 +110,22 @@ class LawOfSkipForward(LawOfMotion):
                 new_state = state_space[index + 2] 
                 return new_state
 
+class LawOfPattern(LawOfMotion):
+    """
+    Law of Motion: Over time, the State transitions according to a pattern.
+    For this to happen, information needs to be stored and retrieved about the system's prior
+    state(s) in order to determine what the next state will be
+
+    Example: (2, 2, 3, 4)
+
+    @param  state_space The set of all possible states for a given system
+    @return new_state   The new state or configuration of the system after the law is applied
+    @see
+    """
+    def apply(self, state_space: list, current_state: State) -> State:
+        """ Apply the Law Of Skip Forward."""
+        for index in range(0, len(state_space)):
+            if state_space[index] == current_space:
+                if state_space[index].name == 'Two':
+                    new_state = 0
+                return new_state 

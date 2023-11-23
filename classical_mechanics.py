@@ -47,4 +47,5 @@ class System(BaseModel):
     state_space: List[State]
     initial_condition: State
     current_state: State
+    prior_state: State
     laws_of_motion: List[LawOfMotion]
