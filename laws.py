@@ -48,6 +48,7 @@ class LawOfCycle(LawOfMotion):
         for index in range(0, len(state_space)):
             if state_space[index] == current_state:
                 new_state = state_space[(index + 1) % 6]
+                state_space[index].prior_state = current_state
                 return new_state
 
 class LawOfConservedQuantity(LawOfMotion):
@@ -73,13 +74,20 @@ class LawOfConservedQuantity(LawOfMotion):
                 # if the position of the state isn't at the end of the cycle 
                 if position < conserved_quantity:
                     # keep moving forward in the cycle
-                    return state_space[index + 1]
+                    new_state = state_space[index + 1]
+                    # set the current state as the future prior state
+                    new_state.prior_state = current_state
+                    current_state = new_state
+                    return current_state
                 # else, if it's at the end of the cycle
                 elif position == conserved_quantity:
                     # circle back to the beginning of the cycle
                     # note that the conserved_quantity is equal to the distance 
                     # between the first and final indices of the cycle
-                    return state_space[index - conserved_quantity]
+                    new_state = state_space[index - conserved_quantity]
+                    new_state.prior_state = current_state
+                    current_state = new_state
+                    return current_state
 
 class LawOfRoll(LawOfMotion):
     """
@@ -106,9 +114,11 @@ class LawOfSkipForward(LawOfMotion):
     def apply(self, state_space: list, current_state: State) -> State:
         """ Apply the Law Of Skip Forward."""
         for index in range(0, len(state_space)):
-            if state_space[index] == current_space:
+            if state_space[index] == current_state:
                 new_state = state_space[index + 2] 
-                return new_state
+                new_state.prior_state = current_state
+                current_state = new_state
+                return current_state
 
 class LawOfPattern(LawOfMotion):
     """
@@ -125,7 +135,25 @@ class LawOfPattern(LawOfMotion):
     def apply(self, state_space: list, current_state: State) -> State:
         """ Apply the Law Of Skip Forward."""
         for index in range(0, len(state_space)):
-            if state_space[index] == current_space:
+            if state_space[index] == current_state:
                 if state_space[index].name == 'Two':
-                    new_state = 0
-                return new_state 
+                    if state_space[index].prior_state.name == 'Two':
+                        new_state = State(state_name='Three')
+                    elif state_space[index].prior_state.name == 'Four':
+                        new_state = State(state_name='Two')
+                elif state_space[index].name == 'Three':
+                    new_state = State(state_name='Four')
+                else: # state name is 'Four'
+                    new_state = State(state_name='Two')
+                new_state.prior_state = current_state
+                current_state = new_state
+                return current_state 
+
+
+
+
+
+
+
+
+
