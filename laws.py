@@ -1,5 +1,5 @@
 """ Enumeration of Laws which some systems are subject to."""
-from classical_mechanics import LawOfMotion
+from classical_mechanics import LawOfMotion, State
 
 class LawOfStasis(LawOfMotion):
     """
