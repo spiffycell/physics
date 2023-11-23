@@ -81,7 +81,8 @@ class LawOfConservedQuantity(LawOfMotion):
 
 class LawOfRoll(LawOfMotion):
     """
-    Law of Motion: Over time, the State transitions from one to one of six states (including the current state).
+    Law of Motion: Over time, the State transitions from one to one of six states \
+            (including the current state).
 
     @param  state_space The set of all possible states for a given system
     @return new_state   The new state or configuration of the system after the law is applied
@@ -90,3 +91,20 @@ class LawOfRoll(LawOfMotion):
     def apply(self, state_space: list) -> State:
         new_state = random.choice(state_space)
         return new_state
+
+class LawOfSkipForward(LawOfMotion):
+    """
+    Law of Motion: Over time, the State transitions forward from one even-indexed State \
+            to the next, or odd-indexed State to the next.
+
+    @param  state_space The set of all possible states for a given system
+    @return new_state   The new state or configuration of the system after the law is applied
+    @see
+    """
+    def apply(self, state_space: list, current_state: State) -> State:
+        """ Apply the Law Of Skip Forward."""
+        for index in range(0, len(state_space)):
+            if state_space[index] == current_space:
+                new_state = state_space[index + 2] 
+                return new_state
+
