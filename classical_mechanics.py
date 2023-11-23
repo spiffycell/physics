@@ -25,6 +25,7 @@ class LawOfMotion(BaseModel):
     @see
     """
     class Config:
+        """ Set the Configuration for general Law Of Motion."""
         arbitrary_types_allowed = True
 
     def apply(self, state: State):
