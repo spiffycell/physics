@@ -64,3 +64,4 @@ class System(BaseModel):
     current_state: State
     prior_state: State
     laws_of_motion: List[LawOfMotion]
+    position_vector: list
