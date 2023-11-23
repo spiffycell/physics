@@ -14,7 +14,8 @@ class Particle(System):
             initial_condition = State(state_name="Config1"),
             current_state = State(state_name="Config2"),
             prior_state = State(state_name="Config3"),
-            laws_of_motion = []
+            laws_of_motion = [],
+            position_vector = []
         )
         self.initial_condition = random.choice(self.state_space)
         self.current_state = self.initial_condition

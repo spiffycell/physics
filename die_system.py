@@ -14,7 +14,8 @@ class DieSystem(System):
             initial_condition = State(state_name='One'),
             current_state = State(state_name='One'),
             prior_state = State(state_name='One'),
-            laws_of_motion = [LawOfStasis(), LawOfCycle(), LawOfConservedQuantity(), LawOfRoll()]
+            laws_of_motion = [LawOfStasis(), LawOfCycle(), LawOfConservedQuantity(), LawOfRoll()],
+            position_vector = []
         )
         self.initial_condition = random.choice(self.state_space)
         self.current_state = self.initial_condition

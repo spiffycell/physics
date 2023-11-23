@@ -12,7 +12,8 @@ class CoinSystem(System):
             initial_condition = State(state_name='Heads'),
             current_state = State(state_name='Heads'),
             prior_state = State(state_name='Heads'),
-            laws_of_motion = [LawOfStasis(), LawOfFlip()]
+            laws_of_motion = [LawOfStasis(), LawOfFlip()],
+            position_vector = []
         )
 
         self.initial_condition = random.choice(self.state_space)
