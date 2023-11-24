@@ -7,10 +7,13 @@ Links for courses:
 Link for the YouTube video:
 https://youtu.be/ApUFtLCrU90?t=2642
 """
-# imports 
+# standard imports 
 from pydantic import BaseModel
 import random
 from typing import List
+
+# local imports
+from analysis import Vector
 
 # classes
 class State(BaseModel):
@@ -69,4 +72,4 @@ class System(BaseModel):
     laws_of_motion: List[LawOfMotion]
     # each position vector has an origin
     # as well as an orientation  
-    position_vector: list
+    position_vector: Vector
