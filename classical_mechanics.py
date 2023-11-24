@@ -3,6 +3,9 @@ Notes for The Theoretical Minimum.
 
 Links for courses:
 - https://theoreticalminimum.com/courses
+
+Link for the YouTube video:
+https://youtu.be/ApUFtLCrU90?t=2642
 """
 # imports 
 from pydantic import BaseModel
@@ -64,4 +67,6 @@ class System(BaseModel):
     current_state: State
     prior_state: State
     laws_of_motion: List[LawOfMotion]
+    # each position vector has an origin
+    # as well as an orientation  
     position_vector: list
