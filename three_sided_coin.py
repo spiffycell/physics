@@ -21,8 +21,8 @@ class ThreeSidedCoin(System):
             current_state = State(state_name='Heads'),
             prior_state = State(state_name='Heads'),
             laws_of_motion = [LawOfStasis(), LawOfFlip()],
-            position = Vector(time=0, x=0, y=0, z=0),
-            velocity = Vector(time=0, x=0, y=0, z=0)
+            position = Vector(x=0, y=0, z=0),
+            velocity = Vector(x=0, y=0, z=0)
         )
 
         self.initial_condition = random.choice(self.state_space)
