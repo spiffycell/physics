@@ -19,7 +19,8 @@ class ThreeSidedCoin(System):
             initial_condition = State(state_name='Heads'),
             current_state = State(state_name='Heads'),
             prior_state = State(state_name='Heads'),
-            laws_of_motion = [LawOfStasis(), LawOfFlip()]
+            laws_of_motion = [LawOfStasis(), LawOfFlip()],
+            position = InertialFrame(time=0, x=0, y=0, z=0)
         )
 
         self.initial_condition = random.choice(self.state_space)
