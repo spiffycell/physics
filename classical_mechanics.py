@@ -5,7 +5,7 @@ Links for courses:
 - https://theoreticalminimum.com/courses
 
 Link for the YouTube video:
-https://youtu.be/ApUFtLCrU90?t=2642
+https://youtu.be/ApUFtLCrU90?t=3034
 """
 # standard imports 
 from pydantic import BaseModel
