@@ -12,19 +12,18 @@ class Vector(BaseModel):
     @param  BaseModel from pydantic
     @see
     """
-    components: List[float]
-    magnitude: float
-    direction: List[float]
+    x: float
+    y: float
+    z: float
 
-    def __init__(self, components):
+    def __init__(self):
         """
         @desc   Initialize the Vector object
         @param  components  Components of the Vector object 
         @see
         """
-        self.components = components
-        self.magnitude = math.sqrt(sum(x**2 for x in self.components))
-        self.direction = self.components / self.magnitude 
+        self.magnitude = math.sqrt(sum(x**2 + y**2 + z**2))
+        self.direction = [x, y, z] / self.magnitude 
 
     def multiply(self, number):
         """

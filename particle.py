@@ -1,6 +1,7 @@
 """ Point Particle System."""
-from classical_mechanics import State, System, InertialFrame
+from classical_mechanics import State, System
 from laws import LawOfStasis, LawOfCycle, LawOfConservedQuantity, LawOfRoll
+from analysis import Vector
 
 class Particle(System):
     """ Particle Object."""
@@ -15,7 +16,8 @@ class Particle(System):
             current_state = State(state_name="Config2"),
             prior_state = State(state_name="Config3"),
             laws_of_motion = [],
-            position = InertialFrame(time=0, x=0, y=0, z=0)
+            position = Vector(time=0, x=0, y=0, z=0),
+            velocity = Vector(time=0, x=0, y=0, z=0)
         )
         self.initial_condition = random.choice(self.state_space)
         self.current_state = self.initial_condition

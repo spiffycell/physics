@@ -52,7 +52,8 @@ class System(BaseModel):
     @see
     """
     system_name: str
-    position: InertialFrame
+    position: Vector
+    velocity: Vector
     state_set: List[State]
     initial_condition: State
     current_state: State

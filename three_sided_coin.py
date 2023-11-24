@@ -4,6 +4,7 @@ Here we introduce allowable and nonallowable laws.
 """
 from classical_mechanics import System, State
 from laws import LawOfStasis, LawOfFlip
+from analysis import Vector
 
 class ThreeSidedCoin(System):
     """ Object for ThreeSidedCoin."""
@@ -20,7 +21,8 @@ class ThreeSidedCoin(System):
             current_state = State(state_name='Heads'),
             prior_state = State(state_name='Heads'),
             laws_of_motion = [LawOfStasis(), LawOfFlip()],
-            position = InertialFrame(time=0, x=0, y=0, z=0)
+            position = Vector(time=0, x=0, y=0, z=0),
+            velocity = Vector(time=0, x=0, y=0, z=0)
         )
 
         self.initial_condition = random.choice(self.state_space)
