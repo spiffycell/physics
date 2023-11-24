@@ -70,6 +70,4 @@ class System(BaseModel):
     current_state: State
     prior_state: State
     laws_of_motion: List[LawOfMotion]
-    # each position vector has an origin
-    # as well as an orientation  
     position_vector: Vector
