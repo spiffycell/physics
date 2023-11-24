@@ -3,26 +3,18 @@ Notes for The Theoretical Minimum.
 
 Links for courses:
 - https://theoreticalminimum.com/courses
-
-Link for the YouTube video:
-https://youtu.be/ApUFtLCrU90?t=3034
 """
-# standard imports 
-from pydantic import BaseModel
+# imports 
+from pydantic import BaseModel, Field
 import random
 from typing import List
-
-# local imports
-from analysis import Vector
 
 # classes
 class State(BaseModel):
     """ 
-    If all States in a System have one State incoming and one State outgoing,
-    then the System is both deterministic and reversible
-
     @desc   State object.
-    @param  BaseModel from pydantic
+    @param
+    @return
     @see
     """
     state_name: str
@@ -30,44 +22,39 @@ class State(BaseModel):
 class LawOfMotion(BaseModel):
     """ 
     @desc   Law Of Motion object.
-    @param  State of the current System
+    @param
+    @return
     @see
     """
     class Config:
-        """ Set the Configuration for general Law Of Motion."""
         arbitrary_types_allowed = True
 
     def apply(self, state: State):
-        """
-        Apply the law of motion
-        @desc   Law Of Motion object.
-        @param  State of the current System
-        @see
-        """
         raise NotImplementedError("Subclasses must implement the apply method.")
+
+class InertialFrame(BaseModel):
+    """ 
+    @desc   Inertial Frame Of Reference object.
+    @param
+    @return
+    @see
+    """
+    time: float = Field(..., description="Time in seconds")
+    x: float = Field(..., description="x-coordinate in meters")
+    y: float = Field(..., description="y-coordinate in meters")
+    z: float = Field(..., description="z-coordinate in meters")
 
 class System(BaseModel):
     """ 
-    To predict the future in a classical system, we need to know two things:
-    - what are its initial conditions (with perfect knowledge)?
-        - minor deviations in reality from our calculations could blow up in our face
-    - what are its laws of motion?
-
-    Knowing just how imperfect your knowledge is helps you determine HOW FAR 
-    into the future or HOW far into the past you can predict or retrodict
-
-    If you say, "I want to know X days into the future"
-    - you then know how precisely you need to calculate the initial conditions
-
     @desc   System object.
-    @param  BaseModel from pydantic
+    @param
+    @return
     @see
     """
     system_name: str
-    system_space: list
-    state_space: List[State]
+    position: InertialFrame
+    state_set: List[State]
     initial_condition: State
     current_state: State
-    prior_state: State
     laws_of_motion: List[LawOfMotion]
-    position_vector: Vector
+    subsystems: List["System"]
