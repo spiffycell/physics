@@ -12,6 +12,9 @@ from typing import List
 # local imports
 from analysis import Vector
 
+# macros
+GRAVITY_ACCEL = 9.81
+
 # classes
 class State(BaseModel):
     """ 
@@ -69,8 +72,14 @@ class System(BaseModel):
     def __init__(self):
         """ Initialize System."""
         self.kinetic_energy = get_kinetic_energy() 
+        self.potential_energy = get_potential_energy()
 
     def get_kinetic_energy(self):
         """ Kinetic Energy of the system."""
-        kinetic_energy = 1/2 * self.mass * (velocity.magnitude)^2 
+        kinetic_energy = 1/2 * self.mass * velocity.magnitude
         return kinetic_energy
+
+    def get_potential_energy(self):
+        """ Potential Energy of the system."""
+        potential_energy = self.mass * GRAVITY_ACCEL * self.position.z
+        return potential_energy
