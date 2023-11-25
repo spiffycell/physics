@@ -168,3 +168,28 @@ class LawOfPattern(LawOfMotion):
                 current_state = new_state
                 return current_state 
 
+class NewtonsFirstLaw(LawOfMotion):
+    """
+    @desc   A system at rest will stay at rest; system in motion will stay in motion
+    @see
+    """
+    def apply(self, current_state: State) -> State:
+        pass
+
+
+class NewtonsSecondLaw(LawOfMotion):
+    """
+    @desc   Force equals mass times acceleration
+    @see
+    """
+    def apply(self, current_state: State) -> State:
+        pass
+
+class NewtonsThirdLaw(LawOfMotion):
+    """
+    @desc   An action has an equal and opposite reaction
+    @see
+    """
+    def apply(self, current_state: State) -> State:
+        pass
+
