@@ -52,6 +52,7 @@ class System(BaseModel):
     @see
     """
     system_name: str
+    mass: float
     position: Vector
     velocity: Vector
     state_set: List[State]
@@ -59,3 +60,5 @@ class System(BaseModel):
     current_state: State
     laws_of_motion: List[LawOfMotion]
     subsystems: List["System"]
+    kinetic_energy: float
+    potential_energy: float
