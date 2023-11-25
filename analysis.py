@@ -23,7 +23,7 @@ class Vector(BaseModel):
         @see
         """
         self.magnitude = math.sqrt(sum(x**2 + y**2 + z**2))
-        self.direction = [self.x, self.y, self.z] / self.magnitude 
+        self.direction = [x, y, z] / self.magnitude 
 
     def multiply(self, number):
         """
@@ -31,7 +31,7 @@ class Vector(BaseModel):
         @param  number  The number by which the vector is multiplied
         @see
         """
-        return [self.x, self.y, self.z] * number
+        return [x, y, z] * number
 
     def divide(self, number):
         """
@@ -39,7 +39,7 @@ class Vector(BaseModel):
         @param  number  The number by which the vector is divided
         @see
         """
-        return [self.x, self.y, self.z] / number
+        return [x, y, z] / number
 
     def add(self, other_vector):
         """
@@ -47,7 +47,7 @@ class Vector(BaseModel):
         @param  other_vector  The vector to which the original vector is added
         @see
         """
-        return [self.x, self.y, self.z] + other_vector
+        return [x, y, z] + other_vector
 
     def subtract(self, other_vector):
         """
@@ -55,7 +55,7 @@ class Vector(BaseModel):
         @param  other_vector  The vector which the original vector is subtracted by
         @see
         """
-        return [self.x, self.y, self.z] - other_vector
+        return [x, y, z] - other_vector
 
     def dot_product(self, other_vector):
         """
@@ -63,7 +63,7 @@ class Vector(BaseModel):
         @param  other_vector  The vector with which the original vector is operated on
         @see
         """
-        return np.dot([self.x, self.y, self.z], other_vector)
+        return np.dot([x, y, z], other_vector)
 
     def cross_product(self, other_vector):
         """
@@ -71,4 +71,4 @@ class Vector(BaseModel):
         @param  other_vector  The vector with which the original vector is operated on
         @see
         """
-        return np.cross([self.x, self.y, self.z], other_vector)
+        return np.cross([x, y, z], other_vector)
