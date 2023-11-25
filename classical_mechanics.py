@@ -76,7 +76,7 @@ class System(BaseModel):
 
     def get_kinetic_energy(self):
         """ Kinetic Energy of the system."""
-        kinetic_energy = 1/2 * self.mass * velocity.magnitude
+        kinetic_energy = 1/2 * self.mass * (velocity.magnitude)^2
         return kinetic_energy
 
     def get_potential_energy(self):
