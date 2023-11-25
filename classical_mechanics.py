@@ -4,10 +4,13 @@ Notes for The Theoretical Minimum.
 Links for courses:
 - https://theoreticalminimum.com/courses
 """
-# imports 
+# standard imports 
 from pydantic import BaseModel, Field
 import random
 from typing import List
+
+# local imports
+from analysis import Vector
 
 # classes
 class State(BaseModel):
@@ -62,3 +65,12 @@ class System(BaseModel):
     subsystems: List["System"]
     kinetic_energy: float
     potential_energy: float
+
+    def __init__(self):
+        """ Initialize System."""
+        self.kinetic_energy = get_kinetic_energy() 
+
+    def get_kinetic_energy(self):
+        """ Kinetic Energy of the system."""
+        kinetic_energy = 1/2 * self.mass * (velocity.magnitude)^2 
+        return kinetic_energy
