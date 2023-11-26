@@ -37,5 +37,6 @@ def gradient_descent(x, y, gradient_vector):
     return x_new, y_new
 
 def get_gradient_vector(expression, variables):
+    """ Get the gradient vector for a given function."""
     gradient_vector = [get_partial_derivative(expression, variable) for variable in variables]
     return gradient_vector
